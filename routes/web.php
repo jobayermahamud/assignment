@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +17,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('frontend.home',['title'=>"Home page"]);
-});
+})->name('homepage');
 
 
 Route::get('/admin',function (){
     return view("admin.home");
 })->middleware('auth')->name('admin');
 
+Route::get('/logout', function (){
+    Auth::logout();
+    return redirect()->route('homepage');
+});
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*====== Post route ====== */
+ 
+Route::post('/addpost','Post@addPost');
+
+/*====== Post route ====== */
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
