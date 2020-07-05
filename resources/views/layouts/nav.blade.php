@@ -6,7 +6,7 @@
   
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-      <a class="btn btn-success my-2 my-sm-0" href="login">Login</a>
+      <a class="btn btn-success my-2 my-sm-0" href="{{env('APP_URL')}}/login">Login</a>
       
     </div>
   </nav>

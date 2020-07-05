@@ -8,7 +8,7 @@
                <?php return; ?>
            @endif
           <div style="background-color:red">
-            <a href="#" style="text-decoration:none;color:black">
+            <a href="details/{{$sectionTwo[0]->post_id}}" style="text-decoration:none;color:black">
               <div style="background-color:red">
                   <img src="{{asset('storage/'.$sectionTwo[0]->thumbnail)}}" />
                   @if ($sectionTwo[0]->type==2)

@@ -4,12 +4,12 @@
     </li>
     
     <li class="nav-item">
-        <a class="nav-link active" href="admin">Dashboard</a>
+        <a class="nav-link active" href="{{env('APP_URL')}}/admin">Dashboard</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="postlist">Post list</a>
+        <a class="nav-link active" href="{{env('APP_URL')}}/postlist">Post list</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="logout">Logout</a>
+      <a class="nav-link" href="{{env('APP_URL')}}/logout">Logout</a>
     </li>
 </ul>

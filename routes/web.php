@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Auth;
 // })->name('homepage');
 
 Route::get('/', 'FrontendController@index')->name('homepage');
+Route::get('/details/{id}', 'FrontendController@details')->name('details');
 
 
 Route::get('/admin',function (){

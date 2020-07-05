@@ -66,6 +66,12 @@
                       <input type="text" class="form-control" id="exampleInputEmail1" name="title" aria-describedby="emailHelp">
                       
                     </div>
+
+                    <div id="contentarea"  class="form-group">
+                        <label for="section">Post content/Body</label>
+                        <br>
+                        <textarea style="display:block;width:100%" rows="4" cols="4" name="body"></textarea>
+                    </div>
                     <div class="form-group">
                         <label for="posttype">Post type</label>
                         <select name="posttype" id="posttype">
@@ -91,6 +97,8 @@
                             <option value="0">Invisible</option>
                         </select>
                     </div>
+
+
 
                     <div id="videoUrlArea" style="display:none" class="form-group">
                         <label for="section">Set video URL</label>

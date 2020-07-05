@@ -1,9 +1,9 @@
 <div class="row">
-    @for ($i = 1; $i <count($content); $i++)
+    @for ($i = 1; $i <=count($content)-1; $i++)
       <div class="col-md-6">
-        <a href="#" style="text-decoration:none;color:black">
+        <a href="details/{{$content[$i]->post_id}}" style="text-decoration:none;color:black">
           <div style="background-color:red">
-              <img src="{{asset('storage/'.$sectionOne[$i]->thumbnail)}}" />
+              <img src="{{asset('storage/'.$content[$i]->thumbnail)}}" />
               @if ($content[$i]->type==2)
                 <img class="play-icon" src="{{asset('images/play.jpg')}}" alt="" srcset=""/>
               @endif

@@ -25,7 +25,7 @@
                <h1>No Post in this section</h1>
                <?php return; ?>
            @endif
-           <a href="#" style="text-decoration:none;color:black">
+           <a href="details/{{$sectionOne[0]->post_id}}" style="text-decoration:none;color:black">
                 <div style="background-color:red">
                     <img src="{{asset('storage/'.$sectionOne[0]->thumbnail)}}" />
                     @if ($sectionOne[0]->type==2)

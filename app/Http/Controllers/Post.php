@@ -17,6 +17,7 @@ class Post extends Controller
                 'posttype' => 'required',
                 'section' => 'required',
                 'visibility' => 'required',
+                'body' => 'required',
                 'postthumbnail' => 'bail|required|image|mimes:jpeg,png|max:1024'
             );
             if((int)$request->posttype==2){
@@ -34,6 +35,7 @@ class Post extends Controller
            
            $postObj=new Postmodel;
            $postObj->title=$request->title;
+           $postObj->body=$request->body;
            $postObj->thumbnail=$thumbnailId;
            $postObj->video_url=$request->videoUrl;
            $postObj->visibility=(int)$request->visibility;
