@@ -21,17 +21,25 @@
     <hr>
     <div class="row" style="border-right:2px solid gray;height:100vh">
         <div class="col-md-6">
-            <div style="background-color:red">
-                <img src="{{asset('/images/images.jpg')}}" />
-                <img class="play-icon" src="{{asset('images/play.jpg')}}" alt="" srcset="">
-                <h5>Title</h5>
-            </div>
+            @if (count($sectionOne)==0)
+               <h1>No Post in this section</h1>
+               <?php return; ?>
+           @endif
+           <a href="#" style="text-decoration:none;color:black">
+                <div style="background-color:red">
+                    <img src="{{asset('storage/'.$sectionOne[0]->thumbnail)}}" />
+                    @if ($sectionOne[0]->type==2)
+                    <img class="play-icon" src="{{asset('images/play.jpg')}}" alt="" srcset=""/>
+                    @endif
+                    <h5>{{$sectionOne[0]->title}}</h5>
+                </div>
+            </a>
                 
         </div>
             
         
         <div class="col-md-6">
-              @include('layouts.mini-grid',['section_title'=>'Section one title'])
+              @include('layouts.mini-grid',['section_title'=>'Section one title','content'=>$sectionOne])
         </div>
     </div>
 </div>

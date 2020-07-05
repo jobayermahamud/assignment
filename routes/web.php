@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home',['title'=>"Home page"]);
-})->name('homepage');
+// Route::get('/', function () {
+//     return view('frontend.home',['title'=>"Home page"]);
+// })->name('homepage');
+
+Route::get('/', 'FrontendController@index')->name('homepage');
 
 
 Route::get('/admin',function (){
@@ -35,7 +37,8 @@ Auth::routes();
 
 /*====== Post route ====== */
  
-Route::post('/addpost','Post@addPost');
+Route::post('/addpost','Post@addPost')->middleware('auth');
+Route::get('/postlist','Post@postList')->middleware('auth');
 
 /*====== Post route ====== */
 

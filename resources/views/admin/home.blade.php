@@ -42,22 +42,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="{{env('APP_URL')}}">View website</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Post list</a>
-                      </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="logout">Logout</a>
-                    </li>
-                </ul>
+                @include('admin.admin-nav')
             </div>
             <div class="col-md-10">
                 <hr>
                 <h3>Add content</h3>
-                <img src="{{ asset('storage/vvX1kVS6oVRrFviO6chx4hO6gOFHUZEk9YtOnwtb.jpeg') }}"/>
+                <hr>
+                <h4>{{session('status')}}</h4>
+                {{-- <img src="{{ asset('storage/3l7I14QWcBKtZYxwQXneSuSAFZYSgM67ws8Lwelp.jpeg') }}"/> --}}
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -88,6 +80,15 @@
                             <option value="">Select section</option>
                             <option value="1">Section 1</option>
                             <option value="2">Section 2</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visibility">Set Visibility</label>
+                        <select name="visibility" id="visibility">
+                            <option value="">Set visibility</option>
+                            <option value="1">Visible</option>
+                            <option value="0">Invisible</option>
                         </select>
                     </div>
 
