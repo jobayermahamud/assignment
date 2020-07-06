@@ -5,3 +5,6 @@ Import database file added as assignment.sql
 
 check .env file to configure database credential
 
+
+Thanks
+
