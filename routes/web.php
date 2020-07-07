@@ -40,6 +40,7 @@ Auth::routes();
  
 Route::post('/addpost','Post@addPost')->middleware('auth');
 Route::get('/postlist','Post@postList')->middleware('auth');
+Route::get('/publishunpublish/{id}/{visibility}','Post@publishUnpublish')->middleware('auth');
 
 /*====== Post route ====== */
 

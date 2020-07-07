@@ -60,5 +60,13 @@ class Post extends Controller
         $data=$postObj->all();
         return view('admin.postlist',['posts'=>$data]);
     }
+
+
+    public function publishUnpublish($postId,$visibility){
+        $postObj=Postmodel::find($postId);
+        $visibility == 1 ? $postObj->visibility = 0 : $postObj->visibility = 1;
+        $postObj->save();
+        return $visibility;
+    }
  
 }

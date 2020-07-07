@@ -77,11 +77,11 @@
                             <td>Section {{$post->section}}</td>
                             <td>
                                 @if ($post->visibility == 1)
-                                    Visible
+                                    <a visibilityFlag="{{$post->visibility}}" href="{{env('APP_URL')."/publishunpublish/".$post->post_id."/".$post->visibility}}" type="pub_unpub_btn" data-toggle="tooltip" data-placement="top" title="Click to unpublish" class="btn btn-success btn-sm">Published</a>
                                 @endif
 
                                 @if ($post->visibility == 0)
-                                    Invisible
+                                    <a visibilityFlag="{{$post->visibility}}" href="{{env('APP_URL')."/publishunpublish/".$post->post_id."/".$post->visibility}}" type="pub_unpub_btn" data-toggle="tooltip" data-placement="top" title="Click to publish" class="btn btn-danger btn-sm">Unpublished</a>
                                 @endif
                             </td>
                         </tr>
@@ -94,6 +94,16 @@
         </div>
     </div>
     @include('layouts.common-script')
-    
+    <script>
+        addEventListener('click',(e)=>{
+            if(e.target.getAttribute("type")=="pub_unpub_btn"){
+                e.preventDefault();
+                e.target.textContent="Processing"
+                $.ajax({url:e.target.href, success: function(result){
+                    location.reload();
+                }});
+            }
+        })
+    </script>
 </body>
 </html>

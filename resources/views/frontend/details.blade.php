@@ -1,5 +1,11 @@
 @extends('layouts.master')
-
+@section('meta')
+    <meta name="og:title" content="{{$title}}">
+    <meta name="og:url" content="{{env('APP_URL')."/details/".$details[0]->post_id}}">
+    <meta property="og:image" content="{{asset('storage/'.$details[0]->thumbnail)}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="650">
+@endsection
 @section('container')
 
 <div class="container-fluid">
